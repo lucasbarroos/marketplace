@@ -42,7 +42,7 @@ export default function Products() {
         ))}
         <Grid item lg={12} md={12} sm={12} xs={12} align="center">
           <ButtonForm>
-            <Button variant="contained" color="secondary">Ver frutas</Button>
+            <Button variant="contained" color="secondary">Ver Produtos</Button>
           </ButtonForm>
         </Grid>
       </Grid>
