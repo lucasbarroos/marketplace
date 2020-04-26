@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
-import { Container, Title } from './styles';
+import { Grid, Button } from '@material-ui/core';
+import { Container, Title, ButtonForm } from './styles';
 import Product from '../Product/index';
 
 const products = [{
@@ -14,6 +14,18 @@ const products = [{
   price: '1,80 R$/Unid',
   description: 'Fruta grande, importada. Ideal para uma vitamina ou ate guacamole!',
   image: 'https://freshorganicos.com.br/wp-content/uploads/2016/01/FRESH_ImagemPadrao_HortiFruti_5_600x600.png',
+},
+{
+  name: 'Laranja',
+  price: '0,30 R$/Unid',
+  description: 'Docinha e macia, das fazendas do vale do sao francisco.',
+  image: 'https://freshorganicos.com.br/wp-content/uploads/2015/09/FRESH_ImagemPadrao_HortiFruti_18_600x600.png',
+},
+{
+  name: 'Banana Prata',
+  price: '3,00 R$/Duzia',
+  description: 'Doce e baratissima! Show demais em uma vitamina com farinha lactea!',
+  image: 'https://lh3.googleusercontent.com/proxy/xCNPF0kZ9vNWGqiOiG3up_n1KHvQ3pqFPmlCX4MrPkwF0VM4oeaf1gx2F33k7fJ24D7B3gK8RrfmQhUAIQRgQECQTiGUUgwfLKRXr8TUhdMmKZy8W_oexMDaVZdlHCs',
 }];
 
 export default function Products() {
@@ -28,6 +40,11 @@ export default function Products() {
             <Product fruit={el} />
           </Grid>
         ))}
+        <Grid item lg={12} md={12} sm={12} xs={12} align="center">
+          <ButtonForm>
+            <Button variant="contained" color="secondary">Ver frutas</Button>
+          </ButtonForm>
+        </Grid>
       </Grid>
     </Container>
   );

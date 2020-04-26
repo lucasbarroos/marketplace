@@ -7,3 +7,7 @@ export const Container = styled.div`
 export const Title = styled.div`
     font-size: 2.5rem;
 `;
+
+export const ButtonForm = styled.div`
+    margin-bottom: 40px;
+`;
