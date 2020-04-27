@@ -28,6 +28,10 @@ export default function ProductModal({ product, onClose }) {
     setFruitQuantity(fruitQuantity - 1);
   };
 
+  const handleBuy = () => {
+    onClose();
+  };
+
   return (
     <Container>
       <Content>
@@ -45,6 +49,14 @@ export default function ProductModal({ product, onClose }) {
           <QuantityForm>{fruitQuantity}</QuantityForm>
           <Button color="secondary" onClick={handleAdd}>
             <AddIcon />
+          </Button>
+        </FormButton>
+        <FormButton>
+          <Button variant="contained" color="secondary" onClick={onClose}>
+            Cancelar
+          </Button>
+          <Button variant="contained" color="primary" onClick={handleBuy}>
+            Comprar
           </Button>
         </FormButton>
       </Content>

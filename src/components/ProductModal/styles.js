@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-    height: 60vh;
+    min-height: 60vh;
     width: 30vw;
     background-color: ghostwhite;
     border-radius: 5px;
@@ -47,10 +47,14 @@ export const FormPrice = styled.div`
 export const FormButton = styled.div`
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    button {
+        margin: 5px;
+    }
 `;
 
 export const QuantityForm = styled.div`
