@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { Button, Menu, MenuItem } from '@material-ui/core';
+import {
+  Menu,
+  MenuItem,
+} from '@material-ui/core';
 import {
   Container,
   UL,

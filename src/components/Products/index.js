@@ -1,7 +1,14 @@
 import React from 'react';
-import { Grid, Button } from '@material-ui/core';
+import {
+  Grid,
+  Button,
+  Modal,
+  Backdrop,
+  Fade,
+} from '@material-ui/core';
 import { Container, Title, ButtonForm } from './styles';
 import ProductCard from '../ProductCard/index';
+import ProductModal from '../ProductModal/index';
 
 const products = [{
   name: 'Maca',
@@ -29,6 +36,19 @@ const products = [{
 }];
 
 export default function Products() {
+  const [showModal, setShowModal] = React.useState(false);
+  const [modalContent, setModalContent] = React.useState({});
+
+  const handleClick = (product) => {
+    setShowModal(true);
+    setModalContent(product);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setModalContent({});
+  };
+
   return (
     <Container id="products">
       <Grid container>
@@ -36,10 +56,25 @@ export default function Products() {
           <Title>Mais Vendidos</Title>
         </Grid>
         {products.map((el) => (
-          <Grid item lg={3} md={6} sm={12} xs={12} align="center">
+          <Grid item lg={3} md={6} sm={12} xs={12} align="center" onClick={() => handleClick(el)}>
             <ProductCard fruit={el} />
           </Grid>
         ))}
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          open={showModal}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 700,
+          }}
+        >
+          <Fade in={showModal}>
+            <ProductModal product={modalContent} onClose={handleClose} />
+          </Fade>
+        </Modal>
         <Grid item lg={12} md={12} sm={12} xs={12} align="center">
           <ButtonForm>
             <Button variant="contained" color="secondary">Ver Produtos</Button>
