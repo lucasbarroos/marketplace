@@ -29,6 +29,7 @@ export const FruitTitle = styled.div`
 export const FruitsImage = styled.img`
     width: 100%;
     border-radius: 5px;
+    max-height: 460px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 `;
 
@@ -37,6 +38,7 @@ export const VegetablesSection = styled.div`
     position: relative;
     border-radius: 5px;    
     color: white;
+    max-height: 460px;
     transition: opacity 0.3s linear;
     opacity: 0.8;
     &:hover {
@@ -46,6 +48,7 @@ export const VegetablesSection = styled.div`
 
 export const VegetablesTitle = styled.div`
     position: absolute;
+    max-height: 460px;
     top: 10%;
     left: 10%;
     font-size: 10rem;
@@ -56,5 +59,6 @@ export const VegetablesTitle = styled.div`
 export const VegetablesImage = styled.img`
     width: 100%;
     border-radius: 5px;
+    max-height: 460px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 `;
