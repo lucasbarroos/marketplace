@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Button } from '@material-ui/core';
 import { Container, Title, ButtonForm } from './styles';
-import Product from '../Product/index';
+import ProductCard from '../ProductCard/index';
 
 const products = [{
   name: 'Maca',
@@ -37,7 +37,7 @@ export default function Products() {
         </Grid>
         {products.map((el) => (
           <Grid item lg={3} md={6} sm={12} xs={12} align="center">
-            <Product fruit={el} />
+            <ProductCard fruit={el} />
           </Grid>
         ))}
         <Grid item lg={12} md={12} sm={12} xs={12} align="center">

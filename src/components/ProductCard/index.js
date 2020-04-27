@@ -10,7 +10,7 @@ import {
   ButtonForm,
 } from './styles';
 
-export default function Products({ fruit }) {
+export default function ProductCard({ fruit }) {
   return (
     <Container>
       <Form>
