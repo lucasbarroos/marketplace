@@ -25,7 +25,7 @@ const products = [{
   name: 'Banana Prata',
   price: '3,00 R$/Duzia',
   description: 'Doce e baratissima! Show demais em uma vitamina com farinha lactea!',
-  image: 'https://lh3.googleusercontent.com/proxy/xCNPF0kZ9vNWGqiOiG3up_n1KHvQ3pqFPmlCX4MrPkwF0VM4oeaf1gx2F33k7fJ24D7B3gK8RrfmQhUAIQRgQECQTiGUUgwfLKRXr8TUhdMmKZy8W_oexMDaVZdlHCs',
+  image: 'https://superprix.vteximg.com.br/arquivos/ids/178630-600-600/Banana-Prata.png?v=636861955826400000',
 }];
 
 export default function Products() {

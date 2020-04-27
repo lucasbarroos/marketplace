@@ -8,12 +8,12 @@ export const Container = styled.div`
 export const FruitSection = styled.div`
     cursor: pointer;
     position: relative;
-    border-radius: 5px;
-    color: rgba(232, 241, 87, 1);
+    border-radius: 5px; 
+    color: white;
     transition: opacity 0.3s linear;
+    opacity: 0.8;
     &:hover {
-        opacity: 0.5;
-        color: white !important;
+        opacity: 0.6;
     }
 `;
 
@@ -23,6 +23,7 @@ export const FruitTitle = styled.div`
     left: 10%;
     font-size: 10rem;
     font-weight: bold;
+    text-shadow: 0px 0px 10px black;
 `;
 
 export const FruitsImage = styled.img`
@@ -31,16 +32,15 @@ export const FruitsImage = styled.img`
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 `;
 
-
 export const VegetablesSection = styled.div`
     cursor: pointer;
     position: relative;
-    border-radius: 5px;
-    color: rgba(232, 241, 87, 1);
+    border-radius: 5px;    
+    color: white;
     transition: opacity 0.3s linear;
+    opacity: 0.8;
     &:hover {
-        opacity: 0.5;
-        color: white !important;
+        opacity: 0.6;
     }
 `;
 
@@ -50,6 +50,7 @@ export const VegetablesTitle = styled.div`
     left: 10%;
     font-size: 10rem;
     font-weight: bold;
+    text-shadow: 0px 0px 10px black;
 `;
 
 export const VegetablesImage = styled.img`
