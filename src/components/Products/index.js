@@ -56,8 +56,8 @@ export default function Products() {
           <Title>Mais Vendidos</Title>
         </Grid>
         {products.map((el) => (
-          <Grid item lg={3} md={6} sm={12} xs={12} align="center" onClick={() => handleClick(el)}>
-            <ProductCard fruit={el} />
+          <Grid item lg={3} md={6} sm={12} xs={12} align="center">
+            <ProductCard fruit={el} onClick={() => handleClick(el)} />
           </Grid>
         ))}
         <Modal

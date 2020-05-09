@@ -68,6 +68,7 @@ export const SuccefullBuy = styled.div`
     align-items: center;
     flex-direction: column;
     height: 500px;
+    padding: 10px;
 `;
 
 export const SuccefullBuyText = styled.div`
@@ -81,5 +82,5 @@ export const SuccefullBuyIcon = styled.img`
     width: 80px;
     background-color: rgba(99,162,17,0.25);
     border-radius: 50%;
-    padding: 33px;
+    padding: 30px;
 `;

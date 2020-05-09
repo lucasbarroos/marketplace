@@ -19,6 +19,7 @@ import {
   SuccefullBuyIcon,
 } from './styles';
 
+
 export default function ProductModal({ product, onClose }) {
   const [fruitQuantity, setFruitQuantity] = React.useState(0);
   const [toBuy, setToBuy] = React.useState(true);
@@ -35,6 +36,7 @@ export default function ProductModal({ product, onClose }) {
 
   const handleBuy = () => {
     setToBuy(false);
+    setTimeout(() => onClose(), 1000);
   };
 
   return (

@@ -10,9 +10,9 @@ import {
   ButtonForm,
 } from './styles';
 
-export default function ProductCard({ fruit }) {
+export default function ProductCard({ fruit, onClick }) {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Form>
         <Image src={fruit.image} />
         <FormPrice>{fruit.price}</FormPrice>
