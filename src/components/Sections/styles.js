@@ -11,7 +11,7 @@ export const FruitSection = styled.div`
     border-radius: 5px; 
     color: white;
     transition: opacity 0.3s linear;
-    opacity: 0.8;
+    opacity: 0.9;
     &:hover {
         opacity: 0.6;
     }
@@ -40,9 +40,9 @@ export const VegetablesSection = styled.div`
     color: white;
     max-height: 460px;
     transition: opacity 0.3s linear;
-    opacity: 0.8;
+    opacity: 1;
     &:hover {
-        opacity: 0.6;
+        opacity: 0.8;
     }
 `;
 

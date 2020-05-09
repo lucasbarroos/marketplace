@@ -61,3 +61,25 @@ export const QuantityForm = styled.div`
     font-size: 1.6rem;
     color: black;
 `;
+
+export const SuccefullBuy = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+`;
+
+export const SuccefullBuyText = styled.div`
+    color: rgba(99, 162, 17, 0.8);
+    font-size: 2.6rem;
+    text-align: center;
+`;
+
+export const SuccefullBuyIcon = styled.img`
+    height: 80px;
+    width: 80px;
+    background-color: rgba(99,162,17,0.25);
+    border-radius: 50%;
+    padding: 33px;
+`;
