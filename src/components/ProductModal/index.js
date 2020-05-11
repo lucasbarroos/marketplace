@@ -36,7 +36,7 @@ export default function ProductModal({ product, onClose }) {
 
   const handleBuy = () => {
     setToBuy(false);
-    setTimeout(() => onClose(), 1000);
+    setTimeout(() => onClose(), 700);
   };
 
   return (

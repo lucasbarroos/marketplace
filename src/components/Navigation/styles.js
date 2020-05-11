@@ -14,7 +14,8 @@ export const UL = styled.ul`
     display: flex;
     height: ${(props) => (props.showTopHeader ? '60px' : '0px')};
     opacity: ${(props) => (props.showTopHeader ? 100 : 0)};
-    width: 100%;
+    width: 100%;  
+    list-style-type: none;
     flex-direction: row;
     animation-delay: 2s;
     animation-duration: 2s;
@@ -25,7 +26,16 @@ export const UL = styled.ul`
     }
 `;
 
-export const LI = styled.ul`
+export const LI = styled.li`
+    font-size: 1.6em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+`;
+
+export const RightLI = styled.li`
     font-size: 1.6em;
     margin-left: 10px;
     margin-right: 10px;

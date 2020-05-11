@@ -8,6 +8,7 @@ import {
   Container,
   UL,
   LI,
+  RightLI,
   ResponsiveToggle,
   ResponsiveImage,
 } from './styles';
@@ -52,6 +53,11 @@ export default function Navigation() {
             Contato
           </Link>
         </LI>
+        <RightLI>
+          <Link activeClass="active" to="contact" spy smooth offset={0} duration={500}>
+            Carrinho
+          </Link>
+        </RightLI>
       </UL>
       <Menu
         id="simple-menu"
