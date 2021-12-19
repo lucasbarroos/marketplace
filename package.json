@@ -8,7 +8,7 @@
     "start": "next start",
     "prepare": "husky install",
     "test": "echo should run all the tests - SOON",
-    "lint": "eslint src"
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
