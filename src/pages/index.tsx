@@ -1,7 +1,7 @@
 import React from "react"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
 import Layout from "./components/Layout"
-import Post, { PostProps } from "./components/Post"
+import User, { UserProps } from "./components/User"
 import prisma from '../../lib/prisma';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 type Props = {
-  feed: PostProps[]
+  feed: UserProps[]
 }
 
 const Home: React.FC<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -26,24 +26,24 @@ const Home: React.FC<Props> = (props: InferGetStaticPropsType<typeof getStaticPr
       <div className="page">
         <h1>Users Registered</h1>
         <main>
-          {props.users.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
+          {props.users.map((user) => (
+            <div key={user.id} className="user">
+              <User user={user} />
             </div>
           ))}
         </main>
       </div>
       <style jsx>{`
-        .post {
+        .user {
           background: white;
           transition: box-shadow 0.1s ease-in;
         }
 
-        .post:hover {
+        .user:hover {
           box-shadow: 1px 1px 3px #aaa;
         }
 
-        .post + .post {
+        .user + .user {
           margin-top: 2rem;
         }
       `}</style>

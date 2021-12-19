@@ -2,25 +2,27 @@ import React from "react"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
 import ReactMarkdown from "react-markdown"
 import Layout from "../components/Layout"
-import { PostProps } from "../components/Post"
+import { UserProps } from "../components/User"
+import prisma from '../../../lib/prisma';
+
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const post = {
-    id: 1,
-    title: "Prisma is the perfect ORM for Next.js",
-    content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
-    published: false,
-    author: {
-      name: "Nikolas Burk",
-      email: "burk@prisma.io",
+  const user = await prisma.users.findUnique({
+    where: {
+      id: Number(params?.id) || -1,
     },
-  }
+    include: {
+      role: {
+        select: { name: true },
+      },
+    },
+  });
   return {
-    props: post,
-  }
-}
+    props: user,
+  };
+};
 
-const Post: React.FC<PostProps> = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const User: React.FC<UserProps> = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   let title = props.title
   if (!props.published) {
     title = `${title} (Draft)`
@@ -30,7 +32,7 @@ const Post: React.FC<PostProps> = (props: InferGetServerSidePropsType<typeof get
     <Layout>
       <div>
         <h2>{title}</h2>
-        <p>By {props?.author?.name || "Unknown author"}</p>
+        <p>By {props?.role?.name || "Unknown role"}</p>
         <ReactMarkdown source={props.content} />
       </div>
       <style jsx>{`
@@ -58,4 +60,4 @@ const Post: React.FC<PostProps> = (props: InferGetServerSidePropsType<typeof get
   )
 }
 
-export default Post
+export default User
