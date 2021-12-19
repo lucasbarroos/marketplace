@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
-    "test": "should run all the tests (SOON)"
+    "test": "echo should run all the tests - (SOON)"
   },
   "keywords": [],
   "author": "",
