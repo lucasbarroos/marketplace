@@ -1,7 +1,6 @@
 import React from "react"
 import { GetServerSideProps, InferGetServerSidePropsType } from "next"
 import ReactMarkdown from "react-markdown"
-import Layout from "../components/Layout"
 import { UserProps } from "../components/User"
 import prisma from '../../../lib/prisma';
 

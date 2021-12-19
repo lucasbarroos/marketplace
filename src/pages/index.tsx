@@ -1,6 +1,5 @@
 import React from "react"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
-import Layout from "./components/Layout"
 import User, { UserProps } from "./components/User"
 import prisma from '../../lib/prisma';
 
@@ -22,7 +21,7 @@ type Props = {
 
 const Home: React.FC<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <Layout>
+    <div>
       <div className="page">
         <h1>Users Registered</h1>
         <main>
@@ -33,21 +32,7 @@ const Home: React.FC<Props> = (props: InferGetStaticPropsType<typeof getStaticPr
           ))}
         </main>
       </div>
-      <style jsx>{`
-        .user {
-          background: white;
-          transition: box-shadow 0.1s ease-in;
-        }
-
-        .user:hover {
-          box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .user + .user {
-          margin-top: 2rem;
-        }
-      `}</style>
-    </Layout>
+    </div>
   )
 }
 
