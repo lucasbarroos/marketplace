@@ -1,31 +1,29 @@
-import React from "react"
-import { GetStaticProps, InferGetStaticPropsType } from "next"
+import React, { useEffect, useState } from "react"
+import { GetStaticProps, InferGetServerSidePropsType } from "next"
 import User, { UserProps } from "./components/User"
-import prisma from '../../lib/prisma';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const users = await prisma.users.findMany({
-    where: { active: true },
-    include: {
-      role: {
-        select: { name: true },
-      },
-    },
-  });
+export const getServerSideProps: GetStaticProps = async () => {
+  const response = await fetch('http://localhost:3000/api/users');
+  const users = await response.json();
   return { props: { users } };
 };
 
 type Props = {
-  feed: UserProps[]
+  users: UserProps[]
 }
 
-const Home: React.FC<Props> = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: React.FC<Props> = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    setUsers(props.users)
+  }, []);
+
   return (
     <div>
       <div className="page">
         <h1>Users Registered</h1>
         <main>
-          {props.users.map((user) => (
+          {users.map((user) => (
             <div key={user.id} className="user">
               <User user={user} />
             </div>
