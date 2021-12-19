@@ -1,35 +1,33 @@
-import { getSession } from 'next-auth/client';
 import prisma from '../../../../lib/prisma';
 
-// POST /api/post
-// Required fields in body: title
-// Optional fields in body: content
-
-const createUser (data) => {
-  return prisma.users.create({
+const createRole = async (data) => {
+  return prisma.roles.create({
     data: {
       ...data
     }
   });
 };
 
+const getRoles = async () => prisma.roles.findMany();
+
 export default async function handle(req, res) {
   switch (req.method) {
     case 'POST': {
-      const { name, email } = req.body;
+      const { active, name } = req.body;
 
-      const session = await getSession({ req });
-      const result = await prisma.users.create({
-        data: {
-          title,
-          content: content,
-          author: { connect: { email: session?.user?.email } },
-        },
+      const result = await createRole({
+        active,
+        name,
       });
-      res.json(result);
+      return res.json(result);
+    }
+    case 'GET': {
+      const result = await getRoles();
+      return res.json(result);
     }
     default: {
       return res.status(405).end(`Method ${req.method} Not Allowed`);
     }
   }
 }
+
