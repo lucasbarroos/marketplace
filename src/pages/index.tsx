@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
-import { GetStaticProps, InferGetServerSidePropsType } from "next"
-import User, { UserProps } from "./components/User"
+import React, { useEffect, useState } from 'react';
+import { GetStaticProps, InferGetServerSidePropsType } from 'next';
+import User, { UserProps } from './components/User';
 
 export const getServerSideProps: GetStaticProps = async () => {
   const response = await fetch('http://localhost:3000/api/users');
@@ -12,10 +12,10 @@ type Props = {
   users: UserProps[]
 }
 
-const Home: React.FC<Props> = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home: React.FC<Props> = function (props: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    setUsers(props.users)
+    setUsers(props.users);
   }, []);
 
   return (
@@ -31,7 +31,7 @@ const Home: React.FC<Props> = (props: InferGetServerSidePropsType<typeof getServ
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
