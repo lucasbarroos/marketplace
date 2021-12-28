@@ -1,12 +1,12 @@
 import prisma from '../../../../lib/prisma';
 
-const createProduct = async (data) => prisma.users.create({
+const createProduct = async (data) => prisma.products.create({
   data: {
     ...data,
   },
 });
 
-const getProducts = async () => prisma.users.findMany({
+const getProducts = async () => prisma.products.findMany({
   select: {
     active: true, name: true, price: true, images: true,
   },

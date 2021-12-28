@@ -29,5 +29,7 @@ module.exports = {
         namedComponents: 'function-declaration',
       },
     ],
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
   },
 };
