@@ -20,5 +20,14 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'comma-dangle': 'off',
+    'react/jsx-filename-extension': 'off',
+    'max-len': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'function-declaration',
+      },
+    ],
   },
 };

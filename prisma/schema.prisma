@@ -30,3 +30,15 @@ model Roles {
 
   @@map(name: "roles")
 }
+
+model Products {
+  id        Int      @id @default(autoincrement())
+  active    Boolean  @default(false)
+  name      String
+  price     Int
+  images    String[]
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "products")
+}

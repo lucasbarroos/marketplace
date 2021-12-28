@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { GetStaticProps, InferGetServerSidePropsType } from 'next';
-import User, { UserProps } from './components/User';
 
 export const getServerSideProps: GetStaticProps = async () => {
   const response = await fetch('http://localhost:3000/api/users');
@@ -8,30 +7,21 @@ export const getServerSideProps: GetStaticProps = async () => {
   return { props: { users } };
 };
 
-type Props = {
-  users: UserProps[]
-}
-
-const Home: React.FC<Props> = function (props: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [users, setUsers] = useState([]);
+function Home(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [usersFetched, setUsersFetched] = useState([]);
+  const { users } = props;
   useEffect(() => {
-    setUsers(props.users);
+    if (users) {
+      setUsersFetched(users);
+    }
   }, []);
 
   return (
     <div>
-      <div className="page">
-        <h1>Users Registered</h1>
-        <main>
-          {users.map((user) => (
-            <div key={user.id} className="user">
-              <User user={user} />
-            </div>
-          ))}
-        </main>
-      </div>
+      <h1>Products Registered</h1>
+      {usersFetched.map((user) => (user.name))}
     </div>
   );
-};
+}
 
 export default Home;
