@@ -1,6 +1,9 @@
-import { AppProps } from "next/app";
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
+import React from 'react';
+import '../global/styles.css';
 
-const App = ({ Component, pageProps }: AppProps) => {
+function App({ Component, pageProps }) {
   return (
     <Component {...pageProps} />
   );
