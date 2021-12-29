@@ -8,7 +8,10 @@ const createProduct = async (data) => prisma.products.create({
 
 const getProducts = async () => prisma.products.findMany({
   select: {
-    active: true, name: true, price: true, images: true,
+    active: true,
+    name: true,
+    price: true,
+    images: true,
   },
 });
 
@@ -16,7 +19,7 @@ export default async function handle(req, res) {
   switch (req.method) {
     case 'POST': {
       const {
-        active, name, price, images,
+        active, name, price, images
       } = req.body;
 
       const result = await createProduct({
