@@ -1,6 +1,7 @@
 import prisma from '../../../../lib/prisma';
+import { ICreateProduct } from '../../../domain/products/createProduct';
 
-const createProduct = async (data) => prisma.products.create({
+const createProduct = async (data: ICreateProduct) => prisma.products.create({
   data: {
     ...data,
   },
